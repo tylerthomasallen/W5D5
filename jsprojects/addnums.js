@@ -5,27 +5,35 @@
 //   output: process.stdout
 // });
 
-const readline = require('readline');
+const readline = require("readline");
 
-const rl = readline.createInterface({
+const reader = readline.createInterface({
+  // debugger
   input: process.stdin,
   output: process.stdout
+  // debugger
 });
 
-class addNumbers {
-  constructor(){
-    
+function addNumbers(sum, numsLeft, completionCallback) {
+  // debugger
+  if (numsLeft > 0) {
+    // debugger
+    reader.question('What numbers would you like to add?', function(res) {
+      let firstNum = res;
+      firstNum = parseInt(firstNum);
+      numsLeft -= 1;
+      sum += firstNum;
+      addNumbers(sum, numsLeft, completionCallback);
+    });
+  } else {
+    completionCallback(sum);
   }
-    
-  addNumbers(sum, numsLeft, completionCallback) {
-    if (numsLeft > 0) {
-      reader();
-    }
-  }
-  
 }
 
-
-
-
-
+// function parseInt 
+  
+addNumbers(0, 3, function (sum) {
+  console.log("Total Sum: " + sum);
+  reader.close();
+});
+  
