@@ -1,0 +1,35 @@
+/* PHASE 5: Cats */
+.content-header {
+  height: 200px;
+  margin: 0 auto;
+  position: relative;
+  width: 900px;
+  background: url('../images/cats.jpg');
+  background-size: cover;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: flex-end;
+  
+}
+
+/* .cat-pic {
+  height: inherit;
+  width: inherit;
+} */
+
+.add-friend-button {
+/* margin-bottom: auto; */
+margin-top: auto;
+padding: 10px;
+background-color: white;
+border-radius: 5px;
+/* margin: 5px;  */
+margin-right: 10px;
+margin-bottom: 5px;
+
+}
+
+.add-friend-button:hover {
+  background-color: purple;
+  transition-delay: 1s;
+}
